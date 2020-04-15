@@ -5,3 +5,4 @@ Members:
 Wang Xuliang (Team Leader)
 Du Zhicong
 Ma Chao
+Chen Tong
