@@ -1,0 +1,19 @@
+/* miniprogram/pages/StorePage/StorePage.wxss */
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test_view{
+  height: 200px;
+}
+

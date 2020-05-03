@@ -1,1 +1,4 @@
+[jwt]
 jwtsecret = "random string with 32 characters"
+# ES256 ES384 ES512 HS256 HS384 HS512
+jwtsigningmethod = "HS256" 

@@ -1,0 +1,19 @@
+{
+  "usingComponents": {
+    "i-cell-group": "/components/dist/cell-group/index",
+    "i-cell": "/components/dist/cell/index",
+    "i-icon": "/components/dist/icon/index",
+    "i-tab-bar" : "/components/dist/tab-bar/index",
+    "i-tab-bar-item": "/components/dist/tab-bar-item/index",
+      "i-card": "/components/dist/card/index",
+      "i-row": "/components/dist/row/index",
+      "i-col": "/components/dist/col/index",
+      "i-grid": "/components/dist/grid/index",
+      "i-grid-item": "/components/dist/grid-item/index",
+      "i-grid-icon": "/components/dist/grid-icon/index",
+      "i-grid-label": "/components/dist/grid-label/index"
+  
+}
+
+
+}

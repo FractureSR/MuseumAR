@@ -1,0 +1,49 @@
+<!--miniprogram/pages/StorePage/StorePage.wxml-->
+<!--标题栏-->
+<view class="title">
+  <i-row>纪念品商店</i-row>
+</view>
+
+<!--商品列表-->
+<i-cell-group>
+    <i-cell>
+      <i-grid >
+        <i-grid-item>
+          <image src="/pages/StorePage/1.jpg" mode="aspectFit" style="width:100%" />
+        </i-grid-item>
+        <i-grid-item>
+          <text>商品1</text>
+        </i-grid-item>
+      </i-grid>      
+    </i-cell>
+    <i-cell>
+      <i-grid>
+        <i-grid-item>
+          <text>商品2</text>
+        </i-grid-item>
+        <i-grid-item>
+          <image src="/pages/StorePage/2.jpg" mode="aspectFit" style="width:100%" />
+        </i-grid-item>
+      </i-grid>
+    </i-cell>
+    <i-cell>
+      <i-grid>
+        <i-grid-item>
+          <image src="/pages/StorePage/3.jpg" mode="aspectFit" style="width:100%" />
+        </i-grid-item>
+        <i-grid-item>
+          <text>商品3</text>
+        </i-grid-item>
+      </i-grid>
+    </i-cell>
+    <i-cell>
+      <i-grid>
+        <i-grid-item>
+          <text>商品4</text>
+        </i-grid-item>
+        <i-grid-item>
+          <image src="/pages/StorePage/4.jpg" mode="aspectFit" style="width:100%"/>
+        </i-grid-item>
+      </i-grid>
+    </i-cell>
+</i-cell-group>

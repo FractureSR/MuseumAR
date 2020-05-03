@@ -1,0 +1,15 @@
+/* pages/activity/acitvity.wxss */
+.child3 {
+  width: 100px;
+  height: 24px;  
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align:center;
+  background: transparent;
+  color :white ;
+  font-size: 20px;
+} 

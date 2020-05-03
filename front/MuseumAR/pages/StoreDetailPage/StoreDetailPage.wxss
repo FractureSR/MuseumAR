@@ -1,0 +1,28 @@
+/* miniprogram/pages/StoreDetailPage/StoreDetailPage.wxss */
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picture_container{
+  width: 100%;
+  height: 750rpx;
+}
+
+.buy_button 
+{ 
+width:100%; 
+color:red; 
+position:fixed; 
+bottom:0;
+height: 92rpx; 
+} 

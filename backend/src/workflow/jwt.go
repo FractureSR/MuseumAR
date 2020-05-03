@@ -4,6 +4,10 @@ import (
 	"github.com/iris-contrib/middleware/jwt"
 )
 
+func GetJwtAuthenticator() *jwt.Middleware {
+	return jwtAuthenticator
+}
+
 func signForToken(openid string, sessionkey string) (string, error) {
 	token := jwt.NewTokenWithClaims(
 		jwt.SigningMethodHS256,
@@ -12,7 +16,7 @@ func signForToken(openid string, sessionkey string) (string, error) {
 			"session_key": sessionkey,
 		})
 
-	tokenString, err := token.SignedString([]byte(aWorkflowConfig.JwtSecret))
+	tokenString, err := token.SignedString([]byte(aWorkflowConfig.Jwt.JwtSecret))
 	if err != nil {
 		return "", err
 	}

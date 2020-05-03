@@ -18,7 +18,14 @@ func main() {
 
 	//mux
 	//receive code to authorize and create a session
-	app.Get("/signin", workflow.SignIn)
+	//ip:port/museumar/signin?code=xxxxxxxx
+	app.Get("/museumar/signin", workflow.SignIn)
+
+	authenticated := app.Party("/museumar/authenticated")
+	authenticated.Use(workflow.GetJwtAuthenticator().Serve)
+	//get museumhomepage data
+	//ip:port/museumar/authenticated/museumhomepage
+	authenticated.Get("/museumhomepage", workflow.MuseumHomePage)
 
 	//listen and serve
 	app.Run(iris.Addr(":8080"))

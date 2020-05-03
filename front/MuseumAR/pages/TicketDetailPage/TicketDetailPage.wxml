@@ -1,0 +1,32 @@
+<view class="container" >
+
+  <!-- 标题栏 -->
+   <i-row>
+   
+      门票
+  </i-row>
+
+</view>
+<!-- 门票信息-->
+<view class="info" style="border:1.5px solid #000">
+  <text>门票信息：
+  </text>
+  <text>成人票
+  </text>
+  <text>参观日期
+  </text>
+  <text>价格：￥
+  </text>
+</view>
+<!--门票说明 -->
+<view class="explain" style="border:1.5px solid #000">
+  <text>门票说明：</text>
+  <view> 1，景区实行实名制，请下单时谨慎检查录入真实姓名和身份证号码，避免因个人原因录入身份证号码错误而导致无法入园，仅支持中国大陆手机号码订购；</view>
+  <text>2，身份证限购：一个身份证出行当天仅限订购一张门票（针对全部售票渠道限购），重复下单无效,请勿重复下单购买；
+  </text>
+  <text>3，根据疫情防控需要，景区单日接待量不超过8000人，超过上限将采取临时闭馆措施，游客参观需全程佩戴口罩，与他人距离保持1.5米以上；</text>
+  <i-row>  <icon class="iconfont icon-car"></icon>交通安全</i-row>
+<i-row> <icon class="iconfont icon-Family"></icon>家庭出游</i-row>
+<i-row> <icon class="iconfont icon-phoneon"></icon> 参观时手机请调成静音或振动</i-row>
+</view>
+<i-button bind:click="handleClick" type="primary" size="large">立即购买</i-button>

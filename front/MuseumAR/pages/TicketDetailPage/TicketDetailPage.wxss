@@ -1,0 +1,18 @@
+/* pages/ticketDetail/ticketDetail.wxss */
+@import"/ICO/iconfont.wxss";
+.info{
+  padding: 15px;
+  margin: 5px;
+  font-size: 14px;
+  background: #c1eaf8;
+}
+.explain{
+  padding: 15px;
+  margin: 5px;
+  font-size: 13px;
+  background: #c1eaf8;
+}
+
+page{
+  background: rgba(89, 235, 198, 0.63);
+}

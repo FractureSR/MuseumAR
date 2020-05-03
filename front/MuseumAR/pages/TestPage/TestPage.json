@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "i-grid": "/components/dist/grid/index",
+    "i-grid-item": "/components/dist/grid-item/index",
+    "i-grid-icon": "/components/dist/grid-icon/index",
+    "i-grid-label": "/components/dist/grid-label/index",
+    "i-button": "/components/dist/button/index",
+    "i-row": "/components/dist/row/index",
+    "i-col": "/components/dist/col/index",
+    "i-icon": "/components/dist/icon/index",
+    "i-page": "/components/dist/page/index",
+    "i-tabs": "/components/dist/tabs/index",
+    "i-tab": "/components/dist/tab/index"
+  }
+}

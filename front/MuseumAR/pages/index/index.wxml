@@ -1,13 +1,60 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
+  <!-- 标题栏 -->
+   <i-row>
+      <i-icon type="other" />
+      首页
+      <i-icon type="scan" />
+  </i-row>
 </view>
+
+
+<!--图片翻页-->
+<view class="picture_container">
+<i-page current="{{ current }}" total="5" mode="pointer" bind:change="handleChange">
+</i-page>
+</view>
+
+<!--分隔符-->
+<i-divider content="功能菜单"></i-divider>
+
+<!--功能菜单栏-->
+<i-row>
+<i-grid>
+    <i-grid-item>
+        <i-grid-icon>
+            <i-icon type="picture" size="28" />
+        </i-grid-icon>
+        <i-grid-label>博物馆介绍</i-grid-label>
+    </i-grid-item>
+    <i-grid-item>
+        <i-grid-icon>
+            <i-icon type="barrage" size="28"/>
+        </i-grid-icon>
+        <i-grid-label>购买门票</i-grid-label>
+    </i-grid-item>
+    <i-grid-item>
+        <i-grid-icon>
+            <i-icon type="service" size="28"/>
+        </i-grid-icon>
+        <i-grid-label>纪念品商店</i-grid-label>
+    </i-grid-item>
+    <i-grid-item>
+        <i-grid-icon>        
+                
+            <i-icon type="message" size="28"/>
+        </i-grid-icon>
+        <i-grid-label>评价与反馈</i-grid-label>
+    </i-grid-item>
+</i-grid>
+</i-row>
+
+<!--分隔符-->
+<i-divider content=""></i-divider>
+
+<!--分页-->
+<i-tabs current="{{ current }}" bindchange="handleChange">
+          <i-tab key="tab1" title="博物馆简介"></i-tab>
+          <i-tab key="tab2" title="近期公告"></i-tab>
+</i-tabs>

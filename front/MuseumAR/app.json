@@ -1,13 +1,20 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/TestPage/TestPage",
+    "pages/StorePage/StorePage",
+    "pages/StoreDetailPage/StoreDetailPage",
+    "pages/ActivityPage/ActivityPage",
+    "pages/CommentPage/CommentPage",
+    "pages/TicketPage/TicketPage"
   ],
   "window": {
+    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "MuseumAR",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
 }

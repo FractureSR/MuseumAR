@@ -1,0 +1,55 @@
+<!--miniprogram/pages/StoreDetailPage/StoreDetailPage.wxml-->
+
+<!--标题栏-->
+<view class="title">
+  <i-row>商品详情</i-row>
+</view>
+
+<scroll-view>
+<!--图片显示-->
+  <view class="picture_switcher">
+    <image src="/pages/StorePage/1.jpg" mode="aspectFit"                       style="width:100%">
+    </image>
+    <i-page current="{{ current }}" total="5" mode="pointer"                    bind:change="handleChange">
+    </i-page>
+  </view>
+<!--商品标题-->
+<i-card title="套娃"  full="true">
+    <view slot="content">俄罗斯套娃，色彩丰富。</view>
+    <view slot="footer" style="color:#ff9900">
+      ￥188
+    </view>
+</i-card>
+
+<!--分隔符-->
+<i-divider height="12"></i-divider>
+
+<!--商品选项-->
+<i-cell title="已选" label="红色" is-link>
+</i-cell>
+
+<!--商品详情-->
+<i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="tab1" title="选项1"></i-tab>
+    <i-tab key="tab2" title="选项2"></i-tab>
+    <i-tab key="tab3" title="选项3"></i-tab>
+    <i-tab key="tab3" title="选项3"></i-tab>
+</i-tabs>
+<view>
+  <image src="/pages/StorePage/1.jpg" mode="aspectFit"                       style="width:100%">
+  </image>
+  <image src="/pages/StorePage/2.jpg" mode="aspectFit"                       style="width:100%">
+  </image>
+  <image src="/pages/StorePage/3.jpg" mode="aspectFit"                       style="width:100%">
+  </image>
+  <image src="/pages/StorePage/4.jpg" mode="aspectFit"                       style="width:100%">
+  </image>
+</view>
+</scroll-view>
+
+<!--底部立即购买按钮-->
+<i-button class="buy_button" bind:click="handleClick" type="error" 
+long="true">
+  立即购买
+</i-button>
+

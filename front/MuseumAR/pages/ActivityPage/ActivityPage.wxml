@@ -1,0 +1,27 @@
+<!--pages/activity/acitvity.wxml-->
+<view class="container">
+  <i-row>
+     活动推荐
+  </i-row>
+</view>
+<i-grid>
+    <i-grid-item>
+            <image  mode='aspectFit' style="width:100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588005460411&di=8b1315ab004c7771d88485303951e3f4&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F07%2Fc6%2F20640721_20640721_1367907636250.jpg" />
+             <view class="child3">活动3</view> 
+    </i-grid-item>
+</i-grid>
+<i-grid>
+    <i-grid-item>
+            <image  mode='aspectFit' style="width:100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588005460411&di=8b1315ab004c7771d88485303951e3f4&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F07%2Fc6%2F20640721_20640721_1367907636250.jpg" />
+             <view class="child3">活动2</view> 
+    </i-grid-item>
+</i-grid>
+
+<i-grid>
+    <i-grid-item>
+            <image  mode='aspectFit' style="width:100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588005460411&di=8b1315ab004c7771d88485303951e3f4&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F07%2Fc6%2F20640721_20640721_1367907636250.jpg" />
+             <view class="child3">活动1</view> 
+    </i-grid-item>
+</i-grid>
+
+
