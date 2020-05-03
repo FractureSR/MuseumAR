@@ -1,0 +1,10 @@
+inuse = "postgresql"
+
+[postgresql]
+ip = "localhost"
+port = 5432
+user = "MuseumAR"
+password = "123456"
+database = "MuseumAR"
+maxconns = 20
+maxidleconns = 10

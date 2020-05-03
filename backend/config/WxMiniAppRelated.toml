@@ -1,0 +1,5 @@
+AppID = "wx28e3a1e734141f76"
+AppSecret = "dcfb43f017df1a04a51967e0d120e4c0"
+
+[APIS]
+auth_code2Session = "https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code"

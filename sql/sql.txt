@@ -1,0 +1,210 @@
+create table Conversation(
+	C_id varchar(20) not null,
+	C_content varchar(200) not null,
+	C_time timestamp not null,
+	C_roleFlag boolean not null,
+	C_CP_id varchar(20) not null,
+	primary key(C_id)
+);
+create table Complaint(
+	CP_id varchar(20) not null,
+	CP_time timestamp not null,
+	CP_statusFlag boolean not null,
+	CP_U_openid varchar(64) not null,
+	primary key(CP_id)
+);
+create table Reply(
+	RP_id varchar(20) not null,
+	RP_content varchar(300) not null,
+	RP_U_openid varchar(64) not null,
+	RP_QN_id varchar(20) not null,
+	primary key(RP_id) 
+);
+create table Questionnaire(
+	QN_id varchar(20) not null,
+	QN_content varchar(300) not null,
+	QN_visibleFlag varchar(20) not null,
+	primary key(QN_id)
+);
+create table Users(
+	U_mobile varchar(20) not null,
+	U_openid varchar(64) not null,
+	U_address varchar(50) not null,
+	primary key(U_openid)
+);
+create table Ticket(
+	T_id varchar(20) not null,
+	T_price int not null,
+	T_explain varchar(200) null,
+	primary key(T_id)
+);
+create table Goods(
+	GO_id varchar(20) not null,
+	GO_time timestamp not null,
+	GO_U_openid varchar(20) not null,
+	primary key(GO_id)
+);
+create table Keepsakes(
+	K_id varchar(20)  not null,
+	K_picture1 text not null,
+	K_picture2 text null,
+	K_picture3 text null,
+	K_price int not null,
+	K_stock int not null,
+	primary key(K_id)
+);
+create table Museum(
+	M_id varchar(20) not null,
+	M_description varchar(2000) not null,
+	M_picture1 text not null,
+	M_picture3 text null,
+	M_picture2 text null,
+	primary key(M_id)
+);
+create table Notice(
+N_title varchar(20) not null,
+N_content varchar(600) not null,
+N_signature varchar(100) not null,
+N_time timestamp null,
+N_topFlag boolean not null,
+N_pushFlag text null,
+primary key(N_title)
+);
+create table Exhibit(
+E_id varchar(20) not null,
+E_description varchar(200) not null,
+E_picture1 text not null,
+E_picture2 text null,
+E_picture3 text null,
+primary key(E_id)
+);
+create table Section(
+S_id varchar(20) not null,
+S_description varchar(1000) not null,
+S_picture1 text null,
+S_picture2 text null,
+primary key(S_id)
+);
+
+create table museum_complaint(
+MC_M_id varchar(20) not null,
+MC_CP_id varchar(20) not null,
+primary key(MC_M_id,MC_CP_id)
+);
+create table museum_questionnaire(
+MQ_M_id varchar(20) not null,
+MQ_QN_id varchar(20) not null,
+primary key(MQ_M_id,MQ_QN_id)
+);
+create table museum_user_ticket(
+MUT_M_id varchar(20) not null,
+MUT_U_id varchar(20) not null,
+MUT_T_id varchar(20) not null,
+MU_time timestamp not null,
+primary key(MUT_M_id,MUT_T_id,MUT_U_id)
+);
+create table museum_ticket(
+MT_M_id varchar(20) not null,
+MT_T_id varchar(20) not null,
+primary key(MT_M_id,MT_T_id)
+);
+create table museum_order(
+MO_M_id varchar(20) not null,
+MO_GO_id varchar(20) not null,
+primary key(MO_GO_id,MO_M_id)
+);
+create table museum_keepsakes(
+MK_M_id varchar(20) not null,
+MK_K_id varchar(20) not null,
+primary key(MK_K_id,MK_M_id)
+);
+create table museum_exhibit(
+ME_M_id varchar(20) not null,
+ME_E_id varchar(20) not null,
+primary key(ME_M_id,ME_E_id)
+);
+create table museum_section(
+MS_M_id varchar(20) not null,
+MS_S_id varchar(20) not null,
+primary key(MS_M_id,MS_S_id)
+);
+create table museum_notice(
+MN_M_id varchar(20) not null,
+MN_N_id varchar(20) not null,
+primary key(MN_M_id,MN_N_id)
+);
+
+
+alter table conversation
+add foreign key(C_CP_id) references complaint;
+commit work;
+
+alter table complaint
+add foreign key(CP_U_openid) references users;
+commit work;
+
+alter table reply
+add foreign key(RP_U_openid) references users;
+alter table reply
+add foreign key(RP_QN_id) references questionnaire;
+commit work;
+
+alter table goods
+add foreign key(GO_U_openid) references users;
+commit work;
+
+alter table museum_complaint
+add foreign key(MC_M_id) references museum;
+alter table museum_complaint
+add foreign key(MC_CP_id)references complaint;
+commit work;
+
+alter table museum_questionnaire
+add foreign key(MQ_M_id) references museum;
+alter table museum_questionnaire
+add foreign key(MQ_QN_id) references questionnaire;
+commit work;
+
+alter table museum_user_ticket
+add foreign key(MUT_M_id) references museum;
+alter table museum_user_ticket
+add foreign key(MUT_U_id) references users;
+alter table museum_user_ticket
+add foreign key(MUT_T_id) references ticket;
+commit work;
+
+alter table museum_ticket
+add foreign key(MT_M_id) references museum;
+alter table museum_ticket
+add foreign key(MT_T_id) references ticket;
+commit work;
+
+alter table museum_order
+add foreign key(MO_M_id) references museum;
+alter table museum_order
+add foreign key(MO_GO_id) references goods;
+commit work;
+
+alter table museum_keepsakes
+add foreign key(MK_M_id) references museum;
+alter table museum_keepsakes
+add foreign key(MK_K_id) references keepsakes;
+commit work;
+
+alter table museum_exhibit
+add foreign key(ME_M_id) references museum;
+alter table museum_exhibit
+add foreign key(ME_E_id) references exhibit;
+commit work;
+
+alter table museum_section
+add foreign key(MS_M_id) references museum;
+alter table museum_section
+add foreign key(MS_S_id) references section;
+commit work;
+
+alter table museum_notice
+add foreign key(MN_M_id) references museum;
+alter table museum_notice
+add foreign key(MN_N_id) references notice;
+commit work

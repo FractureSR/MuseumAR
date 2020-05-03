@@ -1,0 +1,73 @@
+alter table conservation
+add foreign key(C_CP_id) references complaint;
+commit work;
+
+alter table complaint
+add foreign key(CP_U_openid) references users;
+commit work;
+
+alter table reply
+add foreign key(RP_U_openid) references users;
+alter table reply
+add foreign key(RP_QN_id) references questionnaire;
+commit work;
+
+alter table goods
+add foreign key(GO_U_openid) references users;
+commit work;
+
+alter table museum_complaint
+add foreign key(MC_M_id) references museum;
+alter table museum_complaint
+add foreign key(MC_CP_id)references complaint;
+commit work;
+
+alter table museum_questionnaire
+add foreign key(MQ_M_id) references museum;
+alter table museum_questionnaire
+add foreign key(MQ_QN_id) references questionnaire;
+commit work;
+
+alter table museum_user_ticket
+add foreign key(MUT_M_id) references museum;
+alter table museum_user_ticket
+add foreign key(MUT_U_id) references users;
+alter table museum_user_ticket
+add foreign key(MUT_T_id) references ticket;
+commit work;
+
+alter table museum_ticket
+add foreign key(MT_M_id) references museum;
+alter table museum_ticket
+add foreign key(MT_T_id) references ticket;
+commit work;
+
+alter table museum_order
+add foreign key(MO_M_id) references museum;
+alter table museum_order
+add foreign key(MO_GO_id) references goods;
+commit work;
+
+alter table museum_keepsakes
+add foreign key(MK_M_id) references museum;
+alter table museum_keepsakes
+add foreign key(MK_K_id) references keepsakes;
+commit work;
+
+alter table museum_exhibit
+add foreign key(ME_M_id) references museum;
+alter table museum_exhibit
+add foreign key(ME_E_id) references exhibit;
+commit work;
+
+alter table museum_section
+add foreign key(MS_M_id) references museum;
+alter table museum_section
+add foreign key(MS_S_id) references section;
+commit work;
+
+alter table museum_notice
+add foreign key(MN_M_id) references museum;
+alter table museum_notice
+add foreign key(MN_N_id) references notice;
+commit work
