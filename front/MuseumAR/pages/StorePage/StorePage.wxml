@@ -6,44 +6,18 @@
 
 <!--商品列表-->
 <i-cell-group>
-    <i-cell>
-      <i-grid >
-        <i-grid-item>
-          <image src="/pages/StorePage/1.jpg" mode="aspectFit" style="width:100%" />
-        </i-grid-item>
-        <i-grid-item>
-          <text>商品1</text>
-        </i-grid-item>
-      </i-grid>      
-    </i-cell>
-    <i-cell>
-      <i-grid>
-        <i-grid-item>
-          <text>商品2</text>
-        </i-grid-item>
-        <i-grid-item>
-          <image src="/pages/StorePage/2.jpg" mode="aspectFit" style="width:100%" />
-        </i-grid-item>
-      </i-grid>
-    </i-cell>
-    <i-cell>
-      <i-grid>
-        <i-grid-item>
-          <image src="/pages/StorePage/3.jpg" mode="aspectFit" style="width:100%" />
-        </i-grid-item>
-        <i-grid-item>
-          <text>商品3</text>
-        </i-grid-item>
-      </i-grid>
-    </i-cell>
-    <i-cell>
-      <i-grid>
-        <i-grid-item>
-          <text>商品4</text>
-        </i-grid-item>
-        <i-grid-item>
-          <image src="/pages/StorePage/4.jpg" mode="aspectFit" style="width:100%"/>
-        </i-grid-item>
-      </i-grid>
+    <i-cell wx:for ="{{storelist}}" wx:key="{{index}}" bindtap="ToStoreDetailPage" data-item="{{item}}" >
+    <view class="store_view">
+          <view wx:if="{{index%2==0}}" class="img_view">
+            <image src="{{item.image_src}}" mode="aspectFill" style="border-radius: 30rpx;overflow: hidden;height: 340rpx;width: 340rpx" />
+          </view>
+          <view class="text_view">
+            <view slot="footer" style="color:#ff9900">￥{{item.price}}</view>
+            <text sytle="margin: 0rpx;width:300rpx;height: 300rpx">\n{{item.title}}\n{{item.introduction}}</text>
+          </view>
+          <view wx:if="{{index%2==1}}" class="img_view">
+            <image src="{{item.image_src}}" mode="aspectFill" style="border-radius: 30rpx;overflow: hidden;height: 340rpx;width: 340rpx" />
+          </view>
+      </view>
     </i-cell>
 </i-cell-group>

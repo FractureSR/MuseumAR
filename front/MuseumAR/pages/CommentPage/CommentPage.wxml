@@ -1,30 +1,49 @@
 <view class="container">
   <i-row>
-     活动推荐
+     评论区
   </i-row>
+  </view>
+<!-- 评论区 -->
+<view class='talks' >
+<!-- 评论头部 -->
+<view class='talk-header'>
+<view class='talk-count'>{{talks.length}} 条评论</view>
 </view>
-<i-cell-group>
-    <i-cell title="评价">
-        <i-rate 
-            bind:change="onChange1" 
-            value="{{starIndex1}}">
-            {{starIndex1}}星
-        </i-rate>
-    </i-cell>
-</i-cell-group>
+<!-- 评论体 --> 
+<scroll-view class='talk-body' scroll-y="true" bindscrolltolower="onScrollLoad">
+<view class='talk-item' wx:for="{{talks}}" wx:key="*this">
+<view class='talk-item-left'>
+<image class='talk-item-face' src='{{item.avatarUrl}}'></image>
+</view>
+<view class='talk-item-right'>
+<view class='right-left'>
+<text class='talk-item-nickname'>{{item.nickName}}</text>
+<text class='talk-item-time'>{{item.talkTime}}</text>
+</view>
+<text class='talk-item-content'>{{item.content}}</text>
+</view>
+<button class='delete' bindtap='deleteComment' data-index="{{index}}">删除</button>
+</view>
+</scroll-view>
+<!-- 评论底部 -->
 
-<i-panel title="评论输入框">
-    <i-input value="{{ value5 }}" placeholder="请输入评论" />
-</i-panel>
-<i-grid>
-    <i-grid-item>
-            <image  mode='aspectFit' style="width:100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588005460411&di=8b1315ab004c7771d88485303951e3f4&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F07%2Fc6%2F20640721_20640721_1367907636250.jpg" />
-    </i-grid-item>
-    <i-grid-item>
-     <image  mode='aspectFit'  style="width:100%"   src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588005460411&di=8b1315ab004c7771d88485303951e3f4&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F07%2Fc6%2F20640721_20640721_1367907636250.jpg" /> 
-    </i-grid-item>
-    <i-grid-item>
-     <image  mode='aspectFit'  style="width:100%" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1588005460411&di=8b1315ab004c7771d88485303951e3f4&imgtype=0&src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1305%2F07%2Fc6%2F20640721_20640721_1367907636250.jpg" />
-    </i-grid-item>
-</i-grid>
+<view class="cf-bg" catchtap="cemojiCfBg" style="display:{{cfBg ? 'block' : 'none'}}"></view>
+<input class='talk-input' type='text' value='{{inputValue}}' bindblur="bindInputBlur" placeholder='请填写评论'></input>
+<button class='fabu-input' bindtap='faBu'>发布</button>
+<text class='talk-input' type='text' ></text>
 
+</view>
+
+ <!--图片-->
+ <view class="img_box">
+  <view class="imgs" wx:for="{{tempFilePaths}}" wx:key="index">
+    <image src='{{item}}' bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage" data-index="{{index}}" mode='widthFix' />
+  </view>
+  <view class="imgs">
+    <view class="images" bindtap="upload">
+      <image src='../../image/tianjia.png' mode='widthFix' />
+    </view>
+  </view>
+</view>
+
+ 

@@ -1,11 +1,6 @@
 /* miniprogram/pages/StoreDetailPage/StoreDetailPage.wxss */
 
-page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+
 
 .title{
   display: flex;
@@ -26,3 +21,31 @@ position:fixed;
 bottom:0;
 height: 92rpx; 
 } 
+
+.swiper_container {
+  height: 450rpx;
+  padding-top: 0px;
+}
+
+.vol-swiper-item {
+  box-sizing: border-box;
+}
+
+ 
+
+.vol-card {
+  /*parent layout  and  this inner padding*/
+  padding: 20rpx;
+  height: 965rpx;
+  background: #fff;
+}
+
+.vol-swiper {
+  height: 100%;
+}
+
+ 
+
+.vol-picture {
+  width: 100%;
+}

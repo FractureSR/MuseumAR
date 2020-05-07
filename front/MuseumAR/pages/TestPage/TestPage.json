@@ -10,6 +10,8 @@
     "i-icon": "/components/dist/icon/index",
     "i-page": "/components/dist/page/index",
     "i-tabs": "/components/dist/tabs/index",
-    "i-tab": "/components/dist/tab/index"
+    "i-tab": "/components/dist/tab/index",
+    "i-modal": "/components/dist/modal/index",
+    "i-message": "/components/dist/message/index"
   }
 }

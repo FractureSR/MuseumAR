@@ -16,3 +16,8 @@
 page{
   background: rgba(89, 235, 198, 0.63);
 }
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

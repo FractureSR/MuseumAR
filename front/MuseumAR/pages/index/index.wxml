@@ -1,20 +1,28 @@
 <!--index.wxml-->
-<view class="container">
-
+<view class="title_bar" style ="margin: 10rpx">
   <!-- 标题栏 -->
-   <i-row>
-      <i-icon type="other" />
-      首页
-      <i-icon type="scan" />
-  </i-row>
+  <view class="blank_view"></view>
+  <text class="title">首页</text>
+  <i-icon type="scan" size='32' class="AR_Button" bindtap="AR_Scan"/>
 </view>
 
-
-<!--图片翻页-->
-<view class="picture_container">
-<i-page current="{{ current }}" total="5" mode="pointer" bind:change="handleChange">
-</i-page>
-</view>
+<!--图片切换器-->
+<swiper 
+  class="swiper_container" 
+  indicator-dots="{{indicatordots}}" 
+  autoplay="{{autoplay}}" 
+  circular="{{circular}}"
+  interval="{{interval}}" 
+  duration="{{duration}}" 
+  bindchange='onSlideChange'>
+    <block wx:for="{{imgList}}" wx:key="index">
+      <swiper-item class="vol-swiper-item">
+        <view class="vol-card">
+          <image class="vol-picture" src="{{item}}" mode="aspectFill"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
 
 <!--分隔符-->
 <i-divider content="功能菜单"></i-divider>
@@ -22,27 +30,26 @@
 <!--功能菜单栏-->
 <i-row>
 <i-grid>
-    <i-grid-item>
+    <i-grid-item bindtap="ToImformationPage">
         <i-grid-icon>
             <i-icon type="picture" size="28" />
         </i-grid-icon>
         <i-grid-label>博物馆介绍</i-grid-label>
     </i-grid-item>
-    <i-grid-item>
+    <i-grid-item bindtap="ToTicketPage">
         <i-grid-icon>
             <i-icon type="barrage" size="28"/>
         </i-grid-icon>
         <i-grid-label>购买门票</i-grid-label>
     </i-grid-item>
-    <i-grid-item>
+    <i-grid-item bindtap="ToStorePage">
         <i-grid-icon>
             <i-icon type="service" size="28"/>
         </i-grid-icon>
         <i-grid-label>纪念品商店</i-grid-label>
     </i-grid-item>
-    <i-grid-item>
-        <i-grid-icon>        
-                
+    <i-grid-item bindtap="ToCommentPage">
+        <i-grid-icon>         
             <i-icon type="message" size="28"/>
         </i-grid-icon>
         <i-grid-label>评价与反馈</i-grid-label>
@@ -51,10 +58,30 @@
 </i-row>
 
 <!--分隔符-->
-<i-divider content=""></i-divider>
+<i-divider content="" height='24'></i-divider>
 
 <!--分页-->
 <i-tabs current="{{ current }}" bindchange="handleChange">
-          <i-tab key="tab1" title="博物馆简介"></i-tab>
-          <i-tab key="tab2" title="近期公告"></i-tab>
+          <i-tab key="博物馆简介" title="博物馆简介"></i-tab>
+          <i-tab key="近期公告" title="近期公告"></i-tab>
 </i-tabs>
+<scroll-view style="height: 400rpx;margin: 20rpx">
+  <view wx:if = '{{current == "博物馆简介"}}'>
+    <text>博物馆名称：\n</text>
+    <text>简介：\n</text>
+    <text>b\n</text>
+    <text>c\n</text>
+    <text>d\n</text>
+    <text>3e\n</text>
+  </view> 
+  <view wx:if = '{{current =="近期公告"}}'>
+    <text>近期公告：\n</text>
+    <text>时间：2020年5月5日\n</text>
+    <text>详情：DDL要到啦\n</text>
+    <text>c\n</text>
+    <text>d\n111
+    
+    </text>
+    <text>3e\n</text>
+  </view>
+</scroll-view>

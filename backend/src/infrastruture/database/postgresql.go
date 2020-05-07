@@ -31,6 +31,7 @@ func (db postgresql) Connect() *sql.DB {
 
 	err = conn.Ping()
 	if err != nil {
+		log.Fatal(err)
 		log.Fatalln("Cannot connect to database")
 	}
 	conn.SetMaxOpenConns(db.MaxConns)

@@ -1,0 +1,14 @@
+get_access_token_api = "https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=CLIENT_ID&client_secret=CLIENT_SECRET"
+
+[Recognize]
+api_key = "1urYfBMuSZxeCT28haHx6etR"
+secret_key = "tBq0N6fawLzj0ihF2klw14dEpTekPByt"
+with_fase = 0
+api = ""
+
+[Search]
+api_key = "nwgxDL297OGD1c0jAfZU5SSl"
+secret_key = "8sXgvIeYsGPGtiwkOiBKMRpgd73WOH15"
+page = 1
+results_num = 10
+api = "https://aip.baidubce.com/rest/2.0/image-classify/v1/object_detect?access_token=ACCESS_TOKEN"

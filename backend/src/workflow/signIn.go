@@ -10,7 +10,7 @@ import (
 	"MuseumAR_Backend/infrastruture/webService"
 )
 
-type Wxminiapp_auth_code2Session_Resp struct {
+type wxminiapp_auth_code2Session_Resp struct {
 	OpenID     string `json:"openid"`
 	SessionKey string `json:"session_key"`
 	UnionID    string `json:"unionid"`
@@ -42,7 +42,7 @@ func SignIn(ctx iris.Context) {
 		return
 	}
 	//decode the response
-	var w Wxminiapp_auth_code2Session_Resp
+	var w wxminiapp_auth_code2Session_Resp
 	err = json.Unmarshal(respBytes, &w)
 	if err != nil {
 		log.Fatal(err)
