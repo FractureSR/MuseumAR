@@ -1,0 +1,16 @@
+<!--pages/TestPage/TestPage.wxml-->
+<view class="title">
+  <i-row>展区介绍</i-row>
+</view>
+
+ <view wx:for="{{sections}}" 
+       wx:key="index"
+       style="margin: 20rpx" >
+    <view >
+      <text>展区名称：{{item.Name}}</text>
+    </view>
+    <view>
+      <text>
+      展区简介：{{item.Description}}</text>
+    </view>
+  </view> 

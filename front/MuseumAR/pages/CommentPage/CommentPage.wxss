@@ -150,4 +150,9 @@
     width:60rpx;
     height:60rpx;
   }
-  
+  .title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+}

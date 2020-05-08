@@ -58,6 +58,7 @@ func SignIn(ctx iris.Context) {
 	case 40029:
 		fallthrough
 	case 45011:
+		fallthrough
 	default:
 		ctx.StatusCode(400)
 		return

@@ -3,7 +3,7 @@
   <!-- 标题栏 -->
   <view class="blank_view"></view>
   <text class="title">首页</text>
-  <i-icon type="scan" size='32' class="AR_Button" bindtap="AR_Scan"/>
+  <i-icon type="scan" size='32' class="AR_Button" bindtap="ToScanPage"/>
 </view>
 
 <!--图片切换器-->
@@ -30,11 +30,11 @@
 <!--功能菜单栏-->
 <i-row>
 <i-grid>
-    <i-grid-item bindtap="ToImformationPage">
+    <i-grid-item bindtap="ToSectionPage">
         <i-grid-icon>
             <i-icon type="picture" size="28" />
         </i-grid-icon>
-        <i-grid-label>博物馆介绍</i-grid-label>
+        <i-grid-label>展区介绍</i-grid-label>
     </i-grid-item>
     <i-grid-item bindtap="ToTicketPage">
         <i-grid-icon>
@@ -42,17 +42,18 @@
         </i-grid-icon>
         <i-grid-label>购买门票</i-grid-label>
     </i-grid-item>
+
     <i-grid-item bindtap="ToStorePage">
         <i-grid-icon>
             <i-icon type="service" size="28"/>
         </i-grid-icon>
-        <i-grid-label>纪念品商店</i-grid-label>
+        <i-grid-label>特色商店</i-grid-label>
     </i-grid-item>
     <i-grid-item bindtap="ToCommentPage">
         <i-grid-icon>         
             <i-icon type="message" size="28"/>
         </i-grid-icon>
-        <i-grid-label>评价与反馈</i-grid-label>
+        <i-grid-label>评价/反馈</i-grid-label>
     </i-grid-item>
 </i-grid>
 </i-row>
@@ -65,23 +66,26 @@
           <i-tab key="博物馆简介" title="博物馆简介"></i-tab>
           <i-tab key="近期公告" title="近期公告"></i-tab>
 </i-tabs>
-<scroll-view style="height: 400rpx;margin: 20rpx">
-  <view wx:if = '{{current == "博物馆简介"}}'>
-    <text>博物馆名称：\n</text>
-    <text>简介：\n</text>
-    <text>b\n</text>
-    <text>c\n</text>
-    <text>d\n</text>
-    <text>3e\n</text>
+<view class="scroll_view0">
+  <view wx:if = '{{current == "博物馆简介"}}'style="margin: 20rpx" >
+    <view >
+      <text>博物馆名称：{{museum.Name}}</text>
+    </view>
+    <view>
+      <text>
+      简介：{{museum.Description}}</text>
+    </view>
   </view> 
   <view wx:if = '{{current =="近期公告"}}'>
-    <text>近期公告：\n</text>
-    <text>时间：2020年5月5日\n</text>
-    <text>详情：DDL要到啦\n</text>
-    <text>c\n</text>
-    <text>d\n111
+    <i-card wx:for="{{notices}}" wx:key="index"
+            title="{{item.Title}}" extra="{{item.Time}}">
+      <view slot="content">
+      
+      <text>{{item.Content}}</text>
+      <image src="{{notice_pic}}" mode="aspectFill"></image>
+      </view>
+      <view slot="footer">{{item.Signature}}</view>
+    </i-card>
     
-    </text>
-    <text>3e\n</text>
   </view>
-</scroll-view>
+</view>

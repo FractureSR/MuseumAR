@@ -4,7 +4,7 @@ get_access_token_api = "https://aip.baidubce.com/oauth/2.0/token?grant_type=clie
 api_key = "1urYfBMuSZxeCT28haHx6etR"
 secret_key = "tBq0N6fawLzj0ihF2klw14dEpTekPByt"
 with_fase = 0
-api = ""
+api = "https://aip.baidubce.com/rest/2.0/image-classify/v1/object_detect?access_token=ACCESS_TOKEN"
 
 [Search]
 api_key = "nwgxDL297OGD1c0jAfZU5SSl"

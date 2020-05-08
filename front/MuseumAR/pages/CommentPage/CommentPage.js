@@ -1,3 +1,6 @@
+
+const app = getApp()
+
 Page({
     data: {
       talks: [],
@@ -65,12 +68,56 @@ Page({
       console.log(this.data.inputBiaoqing)
       this.data.inputValue = e.detail.value + this.data.inputBiaoqing;
     },
+  //授权登入
+ 
+  bindGetUserInfo(e) {
+    console.log(e.detail.userInfo)
+  },
+ //请求与数据库通信
+
     //点击发布，发布评论
     faBu: function() {
+    //授权得到头像和nickname
       let that = this;
+
+     wx.getSetting({
+    success(res) {
+      if (res.authSetting['scope.userInfo']) {
+        // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+        wx.getUserInfo({
+          success: function (res) {
+            console.log(res.userInfo),
+              that.setData({
+                nickName: res.userInfo.nickName,
+                avatarUrl: res.userInfo.avatarUrl,
+              })
+          }
+        })
+      }
+    }
+  })
+  //请求与数据库通信
+  
+  //连接数据库
+   //判断是用户是否绑定了
+   if (app.globalData.Token && app.globalData.Token!= '') {
+    this.setData({
+    });
+  } else {
+    // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+    // 所以此处加入 callback 以防止这种情况
+    app.tokenReadyCallback =() => {
+      console.log('token!:: '+app.globalData.Token)
+        this.setData({
+          token:app.globalData.Token
+        });     
+    }
+  }
+  
+  //得到内容
       this.data.talks.unshift({
-        avatarUrl: this.data.faces[Math.floor(Math.random() * this.data.faces.length)],
-        nickName: this.data.names[Math.floor(Math.random() * this.data.names.length)],
+       // avatarUrl: this.data.faces[Math.floor(Math.random() * this.data.faces.length)],
+        //nickName: this.data.names[Math.floor(Math.random() * this.data.names.length)],
         content: this.data.inputValue,
         talkTime: Date()
       })

@@ -11,6 +11,7 @@
     "i-page": "/components/dist/page/index",
     "i-tabs": "/components/dist/tabs/index",
     "i-tab": "/components/dist/tab/index",
-    "i-divider": "/components/dist/divider/index"
+    "i-divider": "/components/dist/divider/index",
+    "i-card": "/components/dist/card/index"
   }
 }

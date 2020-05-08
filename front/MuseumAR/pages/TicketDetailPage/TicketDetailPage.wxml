@@ -7,7 +7,7 @@
 
 </view>
 <!-- 门票信息-->
-<view class="info" style="border:1.5px solid #000">
+<view class="info" style="border:0.5px solid #000">
   <text>门票类型：{{tname}}
   </text>
   <text>参观日期: {{time}}
@@ -16,14 +16,20 @@
   </text>
 </view>
 <!--门票说明 -->
-<view class="explain" style="border:1.5px solid #000">
+<view class="explain" style="border:0.5px solid #000">
   门票说明：
   <view> {{info_1}}</view>
   <text>{{info_2}}；
   </text>
   <text>{{info_3}}</text>
+  <text>\n\n\n注意：
+  </text>
   <i-row>  <icon class="iconfont icon-car"></icon>交通安全</i-row>
 <i-row> <icon class="iconfont icon-Family"></icon>家庭出游</i-row>
 <i-row> <icon class="iconfont icon-phoneon"></icon> 参观时手机请调成静音或振动</i-row>
 </view>
-<i-button bind:click="popConfirm" type="primary" size="large">立即购买</i-button>
+
+<view class="btn">
+  <button class="buy_btn" bindtap="popConfirm" >
+   立即购买</button>
+</view>

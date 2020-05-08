@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/TestPage/TestPage",
+    "pages/SectionPage/SectionPage",
     "pages/StorePage/StorePage",
     "pages/StoreDetailPage/StoreDetailPage",
-    "pages/ActivityPage/ActivityPage",
     "pages/CommentPage/CommentPage",
     "pages/TicketPage/TicketPage",
-    "pages/TicketDetailPage/TicketDetailPage"
+    "pages/TicketDetailPage/TicketDetailPage",
+    "pages/ScanPage/ScanPage"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -2,8 +2,11 @@
 
   <!--标题栏-->
 <view class="title">
-  <i-row>门票</i-row>
+  <i-row><i-icon type="barrage" size="20"/>票型选择</i-row>
 </view>
+
+<text>\n</text>
+
   <!--选择参观时间按钮-->
    <i-row>
     <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
@@ -11,31 +14,16 @@
   </picker>
   </i-row>
 
+<text>\n</text>
+
 </view>
 <!--门票列表-->
-<i-cell-group>
-
-    <i-cell title="" is-link url='/pages/TicketDetailPage/TicketDetailPage?tname={{type_0.name}}&time={{time}}&price={{type_0.price}}'>
-      <i-card title="{{type_0.name}}"extra="在线支付 ¥{{type_0.price}}">
-        <view slot="content">{{Mname}}门票</view>
+<block wx:for="{{Tickets}}" wx:for-item="ticket">
+  <i-cell title="" is-link url='/pages/TicketDetailPage/TicketDetailPage?tname={{ticket.Name}}&time={{time}}&price={{ticket.Price}}'>
+      <i-card title="{{ticket.Name}}"extra="在线支付 ¥{{ticket.Price}}">
+        <view slot="content">{{ticket.Detail}}</view>
         <view slot="footer">参观日期: {{time}}</view>
       </i-card>
     </i-cell>
-<i-divider content=""></i-divider>
-    <i-cell title="" is-link url="/pages/TicketDetailPage/TicketDetailPage?tname={{type_1.name}}&time={{time}}&price={{type_1.price}}">
-      <i-card title="{{type_1.name}}"extra="在线支付 ¥{{type_1.price}}" >
-        <view slot="content">{{Mname}}门票</view>
-        <view slot="footer">参观日期: {{time}}</view>
-      </i-card>
-    </i-cell>
-
-<i-divider ></i-divider>
-
-<i-cell title="" is-link url="/pages/TicketDetailPage/TicketDetailPage?tname={{type_2.name}}&time={{time}}&price={{type_2.price}}">
-      <i-card title="{{type_2.name}}"extra="在线支付 ¥{{type_2.price}}" >
-        <view slot="content">{{Mname}}门票</view>
-        <view slot="footer">参观日期: {{time}}</view>
-      </i-card>
-    </i-cell>
-</i-cell-group>
- 
+  <i-divider content=""></i-divider>
+</block>

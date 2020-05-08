@@ -1,4 +1,4 @@
-<view class="container">
+<view class="title">
   <i-row>
      评论区
   </i-row>
@@ -13,11 +13,11 @@
 <scroll-view class='talk-body' scroll-y="true" bindscrolltolower="onScrollLoad">
 <view class='talk-item' wx:for="{{talks}}" wx:key="*this">
 <view class='talk-item-left'>
-<image class='talk-item-face' src='{{item.avatarUrl}}'></image>
+<image class='talk-item-face' src='{{avatarUrl}}'></image>
 </view>
 <view class='talk-item-right'>
 <view class='right-left'>
-<text class='talk-item-nickname'>{{item.nickName}}</text>
+<text class='talk-item-nickname'>{{nickName}}</text>
 <text class='talk-item-time'>{{item.talkTime}}</text>
 </view>
 <text class='talk-item-content'>{{item.content}}</text>
@@ -31,7 +31,10 @@
 <input class='talk-input' type='text' value='{{inputValue}}' bindblur="bindInputBlur" placeholder='请填写评论'></input>
 <button class='fabu-input' bindtap='faBu'>发布</button>
 <text class='talk-input' type='text' ></text>
-
+<view class="cf-bg" catchtap="cemojiCfBg" style="display:{{cfBg ? 'block' : 'none'}}"></view>
+<input class='talk-input' type='text' ></input>
+<button class='fabu-input' bindtap='upload'>添加图片</button>
+<text class='talk-input' type='text' ></text>
 </view>
 
  <!--图片-->
@@ -40,10 +43,8 @@
     <image src='{{item}}' bindlongpress="deleteImage" bindtap="listenerButtonPreviewImage" data-index="{{index}}" mode='widthFix' />
   </view>
   <view class="imgs">
-    <view class="images" bindtap="upload">
+    <view class="images">
       <image src='../../image/tianjia.png' mode='widthFix' />
     </view>
   </view>
 </view>
-
- 

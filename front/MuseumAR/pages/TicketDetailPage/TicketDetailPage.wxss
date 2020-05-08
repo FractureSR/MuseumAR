@@ -1,23 +1,43 @@
 /* pages/ticketDetail/ticketDetail.wxss */
 @import"/ICO/iconfont.wxss";
 .info{
+  background-color: rgb(240,240,240);
   padding: 15px;
   margin: 5px;
-  font-size: 14px;
-  background: #c1eaf8;
+  font-size: 16px;
+ 
 }
 .explain{
+  background-color:rgb(240,240,240);
   padding: 15px;
   margin: 5px;
-  font-size: 13px;
-  background: #c1eaf8;
+  font-size: 16px;
+ 
 }
 
-page{
-  background: rgba(89, 235, 198, 0.63);
-}
 .title{
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.btn{
+  width: 100%;
+  position: fixed;
+  bottom: 30rpx;
+
+
+}
+.buy_btn{
+ 
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: burlywood;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  bottom: 30 rpx  ;
+}
+

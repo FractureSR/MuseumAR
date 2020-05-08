@@ -29,21 +29,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-     time: '2020-5-1',
+     time: '2020-05-01',
     multiArray: [years, months, days],
     multiIndex: [0, 9, 16, 10, 17],
     choose_year: '',
-    Mname: "中国历史博物馆",
-    type_0: 
-      {name: "成人票",
-       price: 100
-      },
-    type_1:{name: "儿童票",
-       price: 40
-      },
-    type_2: {name: "学生票",
-      price: 60
-    }
+    Tickets:[{Name:"成人票", Detail:"详细说明文字", Price: 100 },
+    {Name:"儿童票", Detail:"详细说明文字", Price: 50 },
+    {Name:"老人票", Detail:"详细说明文字", Price: 80 }]
   
   },
 
